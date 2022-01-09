@@ -1,0 +1,51 @@
+/* css template*/
+body {
+  background: #f0e7e7;
+}
+
+header {
+  background-color: #181825;
+}
+header .navbar {
+  display: flex;
+  justify-content: space-between;
+}
+header .navbar .logo {
+  margin: auto 1rem;
+}
+header .navbar .logo img {
+  width: 70%;
+}
+header .navbar nav {
+  display: flex;
+}
+header .navbar nav a {
+  color: white;
+  text-decoration: none;
+}
+header .navbar nav a:hover {
+  color: #d3cdcd;
+}
+header .navbar nav ul.primary-nav,
+header .navbar nav ul.secondary-nav {
+  display: flex;
+  list-style: none;
+  margin: auto 2rem;
+}
+header .navbar nav ul.primary-nav li,
+header .navbar nav ul.secondary-nav li {
+  padding: 0 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  width: fit-content;
+}
+
+main .large-banner {
+  margin: 0 auto;
+}
+main .large-banner img {
+  width: 100%;
+  margin: 0 1.5px;
+}
+
+/*# sourceMappingURL=style.css.map */

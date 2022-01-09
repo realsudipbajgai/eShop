@@ -1,0 +1,64 @@
+/* css template*/
+
+body {
+    background: rgb(240, 231, 231);
+}
+
+header {
+    background-color: rgb(24, 24, 37);
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+
+        .logo {
+            margin: auto 1rem;
+
+            img {
+                width: 70%;
+            }
+        }
+
+        nav {
+            display: flex;
+
+            a {
+                color: white;
+                text-decoration: none;
+
+                &:hover {
+                    color: rgb(211, 205, 205);
+                }
+            }
+
+            ul.primary-nav,
+            ul.secondary-nav {
+                display: flex;
+                list-style: none;
+                margin: auto 2rem;
+
+                li {
+                    padding: 0 1rem;
+                    font-size: 1.2rem;
+                    font-weight: bold;
+                    width: fit-content;
+                }
+            }
+
+
+        }
+
+
+
+    }
+}
+
+main {
+    .large-banner {
+        margin: 0 auto;
+        img {
+            width: 100%;
+            margin: 0 1.5px;
+        }
+    }
+}
