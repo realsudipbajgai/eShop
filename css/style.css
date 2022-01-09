@@ -45,7 +45,10 @@ main .large-banner {
 }
 main .large-banner img {
   width: 100%;
-  margin: 0 1.5px;
+  max-height: 80%;
+}
+main .large-banner .large-banner-slide {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */

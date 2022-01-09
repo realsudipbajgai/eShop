@@ -58,7 +58,10 @@ main {
         margin: 0 auto;
         img {
             width: 100%;
-            margin: 0 1.5px;
+            max-height: 80%;
+        }
+        .large-banner-slide{
+            display: none;
         }
     }
 }
