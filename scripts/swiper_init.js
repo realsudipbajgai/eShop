@@ -1,15 +1,38 @@
 //Initialize Swiper
 
-var swiper = new Swiper(".mySwiper", {
+//large-banner swiper init
+var swiper = new Swiper(".large-banner-swiper", {
     loop:true,
+    grabCursor:true,
     pagination: {
       el: ".swiper-pagination",
       dynamicBullets: true,
     },
-    breakpoins:{
-      '600':{
-        slidesPerView:1
-      }
-    }
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+   
   
+  });
+
+  //this week swiper init
+  var this_week_swiper = new Swiper(".mySwiper", {
+    loop:true,
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    coverflowEffect: {
+      rotate: 50,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows: true,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+    },
+ 
+    
   });
