@@ -17,7 +17,7 @@ var swiper1 = new Swiper(".large-banner-swiper", {
   });
 
   //this week swiper init
-  var this_week_swiper = new Swiper(".this-week-swiper", {
+  var this_week_swiper = new Swiper(".best-phones-swiper", {
     loop:true,
     effect: "coverflow",
     grabCursor: true,
@@ -37,7 +37,7 @@ var swiper1 = new Swiper(".large-banner-swiper", {
     
   });
 
-   //Best Phone swiper init
+   //Best Pricing swiper init
    var swiper = new Swiper(".mySwiper", {
     slidesPerView: 3,
     grid: {
