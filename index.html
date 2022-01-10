@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>eShop</title>
+    
+   <!--Custom css-->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
 </head>
+
 <body>
     <!--Header-->
     <header id="header">
@@ -18,7 +28,7 @@
             <!--!Logo-->
 
             <!---->
-            <nav >
+            <nav>
                 <ul class="primary-nav">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Category</a></li>
@@ -37,22 +47,30 @@
     <!--!header-->
 
     <!--Main Content-->
-   <main>
-    <div class="large-banner">
-     
-            <img  class="large-banner-slide" src="assets/banner-1.jpg" alt="">
-            <img class="large-banner-slide" src="assets/banner-2.jpg" alt="">
-            <img class="large-banner-slide"  src="assets/banner-3.jpg" alt="">
-            <img class="large-banner-slide"  src="assets/banner-4.jpg" alt="">
+    <main>
 
-            <button id="left-banner" onclick="plusDivs(-1)">Left</button>
-            <button id="right-banner" onclick="plusDivs(1)">right</button>
+     <!-- Swiper -->
+     <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="assets/banner-1.jpg" alt=""></div>
+          <div class="swiper-slide"><img src="assets/banner-2.jpg" alt=""></div>
+          <div class="swiper-slide"><img src="assets/banner-3.jpg" alt=""></div>
+          <div class="swiper-slide"><img src="assets/banner-4.jpg" alt=""></div>
      
-    </div>
-    
-   </main>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+
+
+    </main>
     <!--!Main Content-->
 
-    <script src="scripts/index.js"></script>;
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!--custom swiper init-->
+    <script src="scripts/swiper_init.js"></script>
 </body>
+
 </html>
