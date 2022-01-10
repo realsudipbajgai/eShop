@@ -1,9 +1,4 @@
 /* css template*/
-.swiper {
-  width: 600px;
-  height: 300px;
-}
-
 body {
   background: #f0e7e7;
 }
@@ -43,6 +38,29 @@ header .navbar nav ul.secondary-nav li {
   font-size: 1.2rem;
   font-weight: bold;
   width: fit-content;
+}
+
+main #large-banner-swiper {
+  width: 100%;
+}
+main #large-banner-swiper .swiper-slide img {
+  height: auto;
+  width: 100%;
+}
+main #this-week .swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+main #this-week .swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+}
+main #this-week .swiper-slide img {
+  display: block;
+  width: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */
