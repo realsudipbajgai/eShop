@@ -48,4 +48,5 @@ var swiper1 = new Swiper(".large-banner-swiper", {
       el: ".swiper-pagination",
       clickable: true,
     },
+    grabCursor:true,
   });

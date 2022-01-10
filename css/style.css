@@ -40,6 +40,10 @@ header .navbar nav ul.secondary-nav li {
   width: fit-content;
 }
 
+main .container {
+  width: 80%;
+  margin: 0 auto;
+}
 main #large-banner-swiper {
   width: 100%;
 }
@@ -92,6 +96,7 @@ main #best-phones .swiper-slide {
 }
 main #best-phones img {
   width: 300px;
+  height: 290px;
 }
 
 /*# sourceMappingURL=style.css.map */
