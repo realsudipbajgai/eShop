@@ -135,3 +135,17 @@ main {
    }
 
 }
+
+footer{
+    background-color: rgb(25, 25, 41);
+    color: white;
+    .wrapper{
+        text-align: center;
+        margin-top: 3rem;
+
+        p{
+        padding:2rem 0 ;
+
+        }
+    }
+}

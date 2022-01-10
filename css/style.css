@@ -99,4 +99,16 @@ main #best-phones img {
   height: 290px;
 }
 
+footer {
+  background-color: #191929;
+  color: white;
+}
+footer .wrapper {
+  text-align: center;
+  margin-top: 3rem;
+}
+footer .wrapper p {
+  padding: 2rem 0;
+}
+
 /*# sourceMappingURL=style.css.map */
