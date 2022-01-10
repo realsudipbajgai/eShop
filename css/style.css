@@ -1,6 +1,8 @@
 /* css template*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Waterfall&display=swap");
 body {
   background: #f0e7e7;
+  font-family: "Poppins", sans-serif;
 }
 
 header {
