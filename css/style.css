@@ -116,8 +116,19 @@ footer .wrapper p {
 .product-container {
   width: 80%;
   background-color: #e7e4e4;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+@media only screen and (max-width: 600px) {
+  .product-container {
+    grid-template-columns: 1fr;
+  }
+}
+.product-container img.product-image {
+  width: 100%;
+  height: auto;
 }
 
 /*# sourceMappingURL=style.css.map */

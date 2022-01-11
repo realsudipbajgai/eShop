@@ -153,6 +153,19 @@ footer{
 .product-container{
     width: 80%;
     background-color: rgb(231, 228, 228);
-    height: 100vh;
+    min-height: 100vh;
     margin: 0 auto;
+    display: grid;
+    grid-template-columns:1fr 1fr ;
+
+    @media only screen and (max-width:600px){
+        grid-template-columns: 1fr;
+    }
+
+    img.product-image{
+        width: 100%;
+        height: auto;
+
+    }
+    
 }
