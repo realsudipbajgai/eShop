@@ -98,7 +98,7 @@ main #best-pricing .swiper-slide {
 }
 main #best-pricing img {
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 footer {
@@ -107,10 +107,17 @@ footer {
 }
 footer .wrapper {
   text-align: center;
-  margin-top: 5rem;
+  margin-top: 3.5rem;
 }
 footer .wrapper p {
-  padding: 2rem 0;
+  padding: 1rem 0;
+}
+
+.product-container {
+  width: 80%;
+  background-color: #e7e4e4;
+  height: 100vh;
+  margin: 0 auto;
 }
 
 /*# sourceMappingURL=style.css.map */
