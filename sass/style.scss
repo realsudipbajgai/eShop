@@ -3,6 +3,7 @@
 body {
     background: rgb(240, 231, 231);
     font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
 }
 
 header {
@@ -16,7 +17,7 @@ header {
             margin: auto 1rem;
 
             img {
-                width: 70%;
+              width: 8rem;
             }
         }
 
@@ -32,17 +33,12 @@ header {
                 }
             }
 
-            ul.primary-nav,
-            ul.secondary-nav {
+            ul.primary-nav,ul.secondary-nav {
                 display: flex;
                 list-style: none;
-                margin: auto 2rem;
 
                 li {
                     padding: 0 1rem;
-                    font-size: 1.2rem;
-                    font-weight: bold;
-                    width: fit-content;
                 }
             }
 
@@ -54,6 +50,11 @@ header {
     }
 }
 
+@media only screen and (max-width:900px){
+    #header nav{
+        display: none;
+    }
+}
 
 main {
     .container{

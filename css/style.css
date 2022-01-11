@@ -3,6 +3,7 @@
 body {
   background: #f0e7e7;
   font-family: "Poppins", sans-serif;
+  font-size: 1rem;
 }
 
 header {
@@ -16,7 +17,7 @@ header .navbar .logo {
   margin: auto 1rem;
 }
 header .navbar .logo img {
-  width: 70%;
+  width: 8rem;
 }
 header .navbar nav {
   display: flex;
@@ -28,20 +29,19 @@ header .navbar nav a {
 header .navbar nav a:hover {
   color: #d3cdcd;
 }
-header .navbar nav ul.primary-nav,
-header .navbar nav ul.secondary-nav {
+header .navbar nav ul.primary-nav, header .navbar nav ul.secondary-nav {
   display: flex;
   list-style: none;
-  margin: auto 2rem;
 }
-header .navbar nav ul.primary-nav li,
-header .navbar nav ul.secondary-nav li {
+header .navbar nav ul.primary-nav li, header .navbar nav ul.secondary-nav li {
   padding: 0 1rem;
-  font-size: 1.2rem;
-  font-weight: bold;
-  width: fit-content;
 }
 
+@media only screen and (max-width: 900px) {
+  #header nav {
+    display: none;
+  }
+}
 main .container {
   width: 80%;
   margin: 0 auto;
