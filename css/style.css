@@ -246,4 +246,44 @@ footer .wrapper p {
   font-size: 0.8rem;
 }
 
+.cart-container {
+  width: 80%;
+  background-color: #e0dbdb;
+  min-height: 70vh;
+  margin: 2rem auto;
+  border-radius: 2rem;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+}
+.cart-container .row {
+  display: flex;
+  justify-content: space-between;
+}
+.cart-container .left-colm {
+  background-color: #fff;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+}
+.cart-container .left-colm .item-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  border-bottom: 1px solid gray;
+  padding: 1rem 0;
+}
+.cart-container .right-colm .summary-title {
+  border-bottom: 1px solid #413f3f;
+}
+.cart-container .right-colm .total-price {
+  border-top: 1px solid #413f3f;
+}
+.cart-container .right-colm .checkout-wrapper {
+  margin: 1rem auto;
+}
+.cart-container .right-colm .checkout-wrapper .checkout-cta {
+  background-color: #28a745 !important;
+  padding: 0.3rem 1rem;
+  border-radius: 1rem;
+  margin: 0 auto;
+}
+
 /*# sourceMappingURL=style.css.map */

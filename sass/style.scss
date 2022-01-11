@@ -291,3 +291,55 @@ footer{
     }
     
 }
+
+.cart-container{
+    width: 80%;
+    background-color: rgb(224, 219, 219);
+    min-height: 70vh;
+    margin: 2rem auto;
+    border-radius: 2rem;
+    display: grid;
+    grid-template-columns:1.5fr 1fr ;
+    .row{
+        display: flex;
+        justify-content: space-between;
+    }
+    .left-colm{
+        background-color: #fff;
+        border-top-left-radius: 2rem;
+        border-bottom-left-radius: 2rem;
+
+       
+        .item-grid{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            border-bottom: 1px solid gray;
+            padding: 1rem 0;
+        }
+
+    }
+    .right-colm{
+        .summary-title{
+            border-bottom: 1px solid rgb(65, 63, 63);
+        }
+        .total-price{
+            border-top: 1px solid rgb(65, 63, 63);
+            
+        }
+    
+
+           .checkout-wrapper{
+            margin: 1rem auto;
+
+            .checkout-cta{
+                background-color: #28a745!important;
+                   padding: .3rem 1rem;
+                border-radius: 1rem;
+                margin: 0 auto;
+          
+            }
+           }
+        
+        
+    }
+}
