@@ -37,7 +37,7 @@ header .navbar nav ul.primary-nav li, header .navbar nav ul.secondary-nav li {
   padding: 0 1rem;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 912px) {
   #header nav {
     display: none;
   }
@@ -121,7 +121,7 @@ footer .wrapper p {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 912px) {
   .product-container {
     grid-template-columns: 1fr;
   }
@@ -129,6 +129,33 @@ footer .wrapper p {
 .product-container img.product-image {
   width: 100%;
   height: auto;
+}
+.product-container .right-colm {
+  padding: 0 1rem;
+}
+.product-container .right-colm .row {
+  display: flex;
+}
+.product-container .right-colm .product-title {
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+.product-container .right-colm .prices {
+  margin: auto 1rem;
+}
+.product-container .right-colm .prices .old-price {
+  padding-left: 3rem;
+  text-decoration: line-through;
+  color: #645858;
+}
+.product-container .right-colm .prices .new-price {
+  padding-left: 2rem;
+  color: #dc3545 !important;
+}
+.product-container .right-colm .product-brand {
+  color: #6c757d;
+  font-size: 0.7rem;
+  margin-top: -1.2rem;
 }
 
 /*# sourceMappingURL=style.css.map */

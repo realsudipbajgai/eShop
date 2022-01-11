@@ -50,7 +50,7 @@ header {
     }
 }
 
-@media only screen and (max-width:900px){
+@media only screen and (max-width:912px){
     #header nav{
         display: none;
     }
@@ -158,13 +158,43 @@ footer{
     display: grid;
     grid-template-columns:1fr 1fr ;
 
-    @media only screen and (max-width:600px){
+    @media only screen and (max-width:912px){
         grid-template-columns: 1fr;
     }
 
     img.product-image{
         width: 100%;
         height: auto;
+
+    }
+
+    .right-colm{
+        padding:0 1rem ;
+        .row{
+            display: flex;
+        }
+        .product-title{
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+        .prices{
+            margin: auto 1rem;
+            .old-price{
+                padding-left: 3rem;
+                text-decoration: line-through;
+                color: rgb(100, 88, 88);
+            }
+            .new-price{
+                padding-left: 2rem;
+                color: #dc3545!important
+            }
+        }
+        .product-brand{
+            color: #6c757d;
+            font-size: .7rem;
+            margin-top: -1.2rem;
+        }
+
 
     }
     
