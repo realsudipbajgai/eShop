@@ -215,6 +215,9 @@ footer{
                 width: 2rem;
                 background-color: rgb(191, 197, 211);
                 border-radius: 1rem;
+                &:hover{
+                    cursor: pointer;
+                }
             }
             .black{
                 border: 1px solid rgb(212, 212, 212);
@@ -223,6 +226,9 @@ footer{
                 margin-left: .5rem;
                 background-color: rgb(41, 37, 37);
                 border-radius: 1rem;
+                &:hover{
+                    cursor: pointer;
+                }
             }
             .gray{
                 border: 1px solid rgb(212, 212, 212);
@@ -232,6 +238,9 @@ footer{
 
                 background-color: rgb(115, 119, 128);
                 border-radius: 1rem;
+                &:hover{
+                    cursor: pointer;
+                }
             }
         }
         .product-size-head{
@@ -244,6 +253,41 @@ footer{
             color: rgb(92, 91, 91);
         }
 
+     
+        .subscription,
+        .warranty{
+            font-size: .7rem;
+            margin: auto 1rem;
+        }
+
+        .product-price{
+            border: 1px solid lightblue;
+            background-color: lightblue;
+            border-radius: 1rem;
+            padding: .5rem 2.5rem;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+        .Add-to-cart-cta{
+            background-color: #ffc107!important;
+            color: #343a40!important;
+            margin: 1rem 2rem;
+            padding: .5rem 1rem;
+            border-radius: 1.5rem;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+        .you-save{
+            color: #28a745;
+            font-size: .8rem;
+            font-style: italic;
+        }
+        .free-shipping{
+            color: #007bff!important;
+            font-size: .8rem;
+        }
     }
     
 }

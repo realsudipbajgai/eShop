@@ -178,6 +178,9 @@ footer .wrapper p {
   background-color: #bfc5d3;
   border-radius: 1rem;
 }
+.product-container .right-colm .product-colors-body .silver:hover {
+  cursor: pointer;
+}
 .product-container .right-colm .product-colors-body .black {
   border: 1px solid #d4d4d4;
   height: 2rem;
@@ -185,6 +188,9 @@ footer .wrapper p {
   margin-left: 0.5rem;
   background-color: #292525;
   border-radius: 1rem;
+}
+.product-container .right-colm .product-colors-body .black:hover {
+  cursor: pointer;
 }
 .product-container .right-colm .product-colors-body .gray {
   border: 1px solid #d4d4d4;
@@ -194,6 +200,9 @@ footer .wrapper p {
   background-color: #737780;
   border-radius: 1rem;
 }
+.product-container .right-colm .product-colors-body .gray:hover {
+  cursor: pointer;
+}
 .product-container .right-colm .product-size-head {
   font-weight: 300;
   margin-left: 4rem;
@@ -202,6 +211,39 @@ footer .wrapper p {
   margin: 0 0 1rem 9.7rem;
   font-size: 0.8rem;
   color: #5c5b5b;
+}
+.product-container .right-colm .subscription,
+.product-container .right-colm .warranty {
+  font-size: 0.7rem;
+  margin: auto 1rem;
+}
+.product-container .right-colm .product-price {
+  border: 1px solid lightblue;
+  background-color: lightblue;
+  border-radius: 1rem;
+  padding: 0.5rem 2.5rem;
+}
+.product-container .right-colm .product-price:hover {
+  cursor: pointer;
+}
+.product-container .right-colm .Add-to-cart-cta {
+  background-color: #ffc107 !important;
+  color: #343a40 !important;
+  margin: 1rem 2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 1.5rem;
+}
+.product-container .right-colm .Add-to-cart-cta:hover {
+  cursor: pointer;
+}
+.product-container .right-colm .you-save {
+  color: #28a745;
+  font-size: 0.8rem;
+  font-style: italic;
+}
+.product-container .right-colm .free-shipping {
+  color: #007bff !important;
+  font-size: 0.8rem;
 }
 
 /*# sourceMappingURL=style.css.map */
