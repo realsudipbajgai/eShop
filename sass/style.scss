@@ -129,8 +129,8 @@ main {
     align-items: center;
   }
   img{
-      width: 300px;
-      height: 290px;
+      width: 100%;
+      height: auto;
   }
    }
 
@@ -141,7 +141,7 @@ footer{
     color: white;
     .wrapper{
         text-align: center;
-        margin-top: 3rem;
+        margin-top: 5rem;
         p{
         padding:2rem 0 ;
 

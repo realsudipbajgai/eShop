@@ -97,8 +97,8 @@ main #best-pricing .swiper-slide {
   align-items: center;
 }
 main #best-pricing img {
-  width: 300px;
-  height: 290px;
+  width: 100%;
+  height: auto;
 }
 
 footer {
@@ -107,7 +107,7 @@ footer {
 }
 footer .wrapper {
   text-align: center;
-  margin-top: 3rem;
+  margin-top: 5rem;
 }
 footer .wrapper p {
   padding: 2rem 0;
