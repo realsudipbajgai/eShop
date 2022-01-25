@@ -372,3 +372,82 @@ footer{
         
     }
 }
+
+//admin css
+#admin-body{
+    .container{
+        width: 85%;
+        min-height: 100vh;
+        margin: 0 auto;
+        background-color: rgb(50, 50, 54);
+        color: white;
+
+        .wrapper{
+            margin: 0 auto;
+            padding: 5rem 1rem;
+            a{
+                color: white;
+                text-decoration: none;
+            }
+            .admin-category-cta{
+                border: 1px solid #007bff;
+                background: #007bff;
+                color: #343a40;
+                padding: .5rem .5rem ;
+                border-radius: 1rem;
+            }
+            .admin-brands-cta{
+                border: 1px solid #ffc107;
+                background: #ffc107;
+                color: #343a40;
+                padding: .5rem .5rem ;
+                border-radius: 1rem;
+            }
+            .admin-products-cta{
+                border: 1px solid #28a745;
+                background: #28a745;
+                color: #343a40;
+                
+                padding: .5rem .5rem ;
+                border-radius: 1rem;
+            }
+        }
+    }
+}
+//admin category css
+.new-category{
+    display: flex;
+    height: 2.5rem;
+    justify-content: space-between;
+    margin:.5rem 1rem;
+    a{
+        color: black;
+        text-decoration: none;
+        padding: .5rem .5rem;
+        border: 1px solid #007bff;
+        border-radius: .8rem;
+        background: #007bff;
+    }
+}
+#admin-table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #admin-table td, #admin-table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #admin-table tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #admin-table tr:hover {background-color: #ddd;}
+  
+  #admin-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+  }

@@ -312,4 +312,83 @@ footer .wrapper p {
   cursor: pointer;
 }
 
+#admin-body .container {
+  width: 85%;
+  min-height: 100vh;
+  margin: 0 auto;
+  background-color: #323236;
+  color: white;
+}
+#admin-body .container .wrapper {
+  margin: 0 auto;
+  padding: 5rem 1rem;
+}
+#admin-body .container .wrapper a {
+  color: white;
+  text-decoration: none;
+}
+#admin-body .container .wrapper .admin-category-cta {
+  border: 1px solid #007bff;
+  background: #007bff;
+  color: #343a40;
+  padding: 0.5rem 0.5rem;
+  border-radius: 1rem;
+}
+#admin-body .container .wrapper .admin-brands-cta {
+  border: 1px solid #ffc107;
+  background: #ffc107;
+  color: #343a40;
+  padding: 0.5rem 0.5rem;
+  border-radius: 1rem;
+}
+#admin-body .container .wrapper .admin-products-cta {
+  border: 1px solid #28a745;
+  background: #28a745;
+  color: #343a40;
+  padding: 0.5rem 0.5rem;
+  border-radius: 1rem;
+}
+
+.new-category {
+  display: flex;
+  height: 2.5rem;
+  justify-content: space-between;
+  margin: 0.5rem 1rem;
+}
+.new-category a {
+  color: black;
+  text-decoration: none;
+  padding: 0.5rem 0.5rem;
+  border: 1px solid #007bff;
+  border-radius: 0.8rem;
+  background: #007bff;
+}
+
+#admin-table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#admin-table td, #admin-table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#admin-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#admin-table tr:hover {
+  background-color: #ddd;
+}
+
+#admin-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+
 /*# sourceMappingURL=style.css.map */
