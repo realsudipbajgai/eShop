@@ -9,105 +9,161 @@
 
     <!--Custom css-->
     <link rel="stylesheet" href="css/style.css">
+
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/css/bootstrap.min.css"
+        integrity="sha512-T584yQ/tdRR5QwOpfvDfVQUidzfgc2339Lc8uBDtcp/wYu80d7jwBgAxbyMh0a9YM9F8N3tdErpFI8iaGx6x5g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!--owl carousel-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+        integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
-    <!--Font awesome css-->
+    <!--font awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
     <!--Header-->
     <header id="header">
-        <div class="navbar">
-            <!--Logo-->
-            <div class="logo">
-                <a href="#"><img src="assets/eSHOP.svg" alt="logo"></a>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#"><img src="assets/eSHOP.svg" alt="logo" width="300"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between  font-size-22" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Category</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sale</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Log in</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">sign up</a>
+                    </li>
+                </ul>
             </div>
-            <!--!Logo-->
-
-
-            <nav>
-                <ul class="primary-nav">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Category</a></li>
-                    <li><a href="#">Pricing</a></li>
-                    <li><a href="#">Sale</a></li>
-                    <li><a href="#">Features</a></li>
-                </ul>
-                <ul class="secondary-nav">
-                    <li><a href="#">Login</a></li>
-                    <li><a href="#">Sign up</a></li>
-                </ul>
-            </nav>
-        </div>
+        </nav>
     </header>
 
     <!--!header-->
 
     <!--Main Content-->
-    <main>
-
+    <main class="container mb-5">
+        <div class="grid">
+            <div class="row pt-3">
+                <div class="col-sm-6">
+                    <img class="img-fluid" src="assets/product/iphone-6s-plus.jpg" alt="">
+                </div>
+                <div class="col-sm-6">
+                    <div class="row">
+                        <div class="font-weight-bold font-size-24 col-sm-8">iPhone 6s Plus</div>
+                        <div class="col-sm-2 pt-2 text-danger font-line-through">$724</div>
+                        <div class="col-sm-2 pt-2 text-primary text-sm-right">$699</div></p>
+                    </div>
+                   
+                    <p class="font-size-14 font-italic text-secondary">by Apple</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla voluptate voluptates velit quisquam ratione. Rem ipsam iste dolores ipsum ut?</p>
+                    <div class="row">
+                            <div class="col-sm-6">
+                                <h4>Colors and Special Edition</h4>
+                                <div class="d-flex justify-content-around">
+                                    <div class="color-bg-silver rounded-circle p-3"><button class="btn font-size-14"></button></div>
+                                    <div class=" color-bg-gold rounded-circle p-3"><button class="btn font-size-14"></button></div>
+                                    <div class=" color-bg-coral rounded-circle p-3"><button class="btn font-size-14"></button></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 text-sm-right">
+                                <h4>Size</h4>
+                                <div>N/A</div>
+                            </div>
+                    </div>
+                  
+                    <hr>
+                    <div class="row ">
+                        <input type="checkbox" class="col-sm-2">
+                        <p class="col-sm-10">Add 3-Month free trial for even more guidance and motivation (regularly $9.99/mo).New Premium users only <a href="#">Learn More</a></p>
+                    </div>
+                    <div class="row">
+                        <input type="checkbox" class="col-sm-2">
+                        <p class="col-sm-10">Add 2-Year Preotection Plan with Accidental Damage Coerage for $99.99 per device <a href="#">Learn More</a></p>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-5 btn btn-secondary">$699</div>
+                        <a class="col-sm-6 ml-sm-3 btn btn-warning" href="cart.html">Add to Cart</a>
+                    </div>
+                    <div class="row mt-2 col-sm-12 border border-success bg-success rounded-pill justify-content-center text-warning">You Save $25.00</div>
+                    <a href="#" class="text-primary"> <span><i class="fas fa-truck"></i></span> Free Shippin on orders $50+</a>
+                </div>
+            </div>
+               
+           
+        </div>
   
 
         <!--wrapper for content-->
-        <div class="product-container">
-            <div class="left-colm">
-                <img class="product-image" src="assets/iphone/iphone-6s-plus.jpg" alt="">
-            </div>
-            <div class="right-colm">
-                <div class="row">
-                    <h3 class="product-title">iPhone 6s Plus</h3>
-                    <p class="prices"><span class="old-price">$724</span><span class="new-price">$699</span></p>
-                </div>
-               
-                <p class="product-brand">by Apple</p>
-                <p class="product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla voluptate voluptates velit quisquam ratione. Rem ipsam iste dolores ipsum ut?</p>
-                <div class="row">
-                        <h4 class="product-colors-head">Colors and Special Edition</h4>
-                        <h4 class="product-size-head">Size</h4>
-                </div>
-                <div class="row">
-                    <div class="product-colors-body">
-                        <div class="silver"></div>
-                        <div class="black"></div>
-                        <div class="gray"></div>
-                    </div>
-                    <p class="product-size-body">N/A</p>
-                </div>
-                <hr>
-                <div class="row">
-                    <input type="checkbox">
-                    <p class="subscription">Add 3-Month free trial for even more guidance and motivation (regularly $9.99/mo).New Premium users only <a href="#">Learn More</a></p>
-                </div>
-                <div class="row">
-                    <input type="checkbox">
-                    <p class="warranty">Add 2-Year Preotection Plan with Accidental Damage Coerage for $99.99 per device <a href="#">Learn More</a></p>
-                </div>
-                <hr>
-                <div class="row">
-                    <p class="product-price">$699</p>
-                    <a href="cart.html" class="Add-to-cart-cta">Add to Cart</a>
-                </div>
-                <div class="you-save">You Save $25.00</div>
-                <p class="free-shipping"> <span><i class="fas fa-truck"></i></span> Free Shippin on orders $50+</p>
-            </div>
-        </div>
+      
         <!--wrapper for content-->
 
     </main>
     <!--!Main Content-->
 
-    <!--footer-->
-    <footer id="footer-section">
-        <div class="wrapper">
+      <!--footer-->
+      <footer id="footer-section">
+        <div class="bg-dark p-4 text-center text-white">
             <p>&copy eShop:2022</p>
 
         </div>
     </footer>
     <!--!footer-->
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+    <!-- Owl Carousel Js file -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha256-pTxD+DSzIwmwhOqTFN+DB+nHjO4iAsbgfyFq5K5bcE0=" crossorigin="anonymous"></script>
+
     <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!--custom js-->
+    <script src="scripts/index.js"></script>
 
     <!--custom swiper init-->
     <script src="scripts/swiper_init.js"></script>
