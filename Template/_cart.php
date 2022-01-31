@@ -1,61 +1,71 @@
-<!--wrapper for content-->
-<div class="cart-container">
-    <div class="left-colm">
-        <div class="row">
-            <p class="cart-title">Your Cart <span class="total-item">(4)</span></p>
-        </div>
-        <div class="item-grid">
-            <div class="grid-item icon"><a href="product.html"><img  src="assets/iphone/iphone-6s-plus.jpg" alt=""></a></div>
-            <div class="grid-item item-name"><a href="product.html">iPhone 6s plus</a></div>
-            <div class="grid-item item-quantity">3</div>
-            <div class="grid-item item-price">$700</div>
-        </div>
-        <div class="item-grid">
-            <div class="grid-item icon"><a href="product.html"><img src="assets/samsung/samsung-galaxy-s20-ultra-.jpg"alt=""></a></div>
-            <div class="grid-item item-name"><a href="product.html">Samsung galaxy s20 ultra</a></div>
-            <div class="grid-item item-quantity">1</div>
-            <div class="grid-item item-price">$500</div>
-        </div>
-        <div class="item-grid">
-            <div class="grid-item icon"><a href="product.html"><img src="assets/others/redmi-note-10-pro.jpg" alt=""></a></div>
-            <div class="grid-item item-name"><a href="product.html">Redmi Note 10 Pro</a></div>
-            <div class="grid-item item-quantity">1</div>
-            <div class="grid-item item-price">$700</div>
-        </div>
-        <div class="item-grid">
-            <div class="grid-item icon"><a href="product.html"><img src="assets/iphone/iphone-13promax.jpg" alt=""></a></div>
-            <div class="grid-item item-name"><a href="product.html">iPhone 13 pro max</a></div>
-            <div class="grid-item item-quantity">1</div>
-            <div class="grid-item item-price">$1200</div>
-        </div>
+<div class="color-bg-dark-silver" >
+    <div class="container py-5">
+        <div class="row shadow-lg">
+            <div class="col-md-8 bg-white">
+                <div class="row font-size-18 font-weight-bold pt-3">
+                    <p class="pl-3">Your Cart <span class="text-primary">(4)</span></p>
+                </div>
+                <div class="row py-2 border border-bottom ">
+                    <div class="col-4 align-self-center"><a href="product.html"><img  class="img-fluid" src="assets/iphone/iphone-6s-plus.jpg" alt=""></a></div>
+                    <div class="col-5 align-self-center"><a href="product.html">iPhone 6s plus</a></div>
+                    <div class="col-1 align-self-center">3</div>
+                    <div class="col-2 align-self-center">$700</div>
+                </div>
+                <div class="row py-2 border-bottom">
+                    <div class="col-4  align-self-center"><a href="product.html"><img  class="img-fluid" src="assets/samsung/samsung-galaxy-s20-ultra-.jpg" alt=""></a></div>
+                    <div class="col-5  align-self-center"><a href="product.html">samsung s20</a></div>
+                    <div class="col-1  align-self-center">1</div>
+                    <div class="col-2  align-self-center">$800</div>
+                </div>
+                <div class="row py-2 border-bottom">
+                    <div class="col-4  align-self-center"><a href="product.html"><img  class="img-fluid" src="assets/others/redmi-note-10-pro.jpg" alt=""></a></div>
+                    <div class="col-5  align-self-center"><a href="product.html">redmi note 10 pro </a></div>
+                    <div class="col-1  align-self-center">2</div>
+                    <div class="col-2  align-self-center">$600</div>
+                </div>
+                <div class="row py-2 border-bottom">
+                    <div class="col-4  align-self-center"><a href="product.html"><img  class="img-fluid" src="assets/iphone/iphone-13-pro-max.jpg" alt=""></a></div>
+                    <div class="col-5  align-self-center"><a href="product.html">iPhone 13 pro max</a></div>
+                    <div class="col-1  align-self-center">1</div>
+                    <div class="col-2  align-self-center">$1200</div>
+                </div>
 
-    </div>
-    <div class="right-colm">
-        <div class="summary-title">Summary</div>
-        <hr>
-        <div class="row">
-            <p class="item-self">item</p>
-            <p class="item-num">6</p>
-            <p class="item-total-price">$3300</p>
-        </div>
-        <div class="shipping-div">
-            <p class="shipping-title">Shipping</p>
-            <p>Dropdown goes here</p>
-        </div>
-        <div class="total-price">
-            <div class="row">
-                <p class="total-price-title">Total Price</p>
-                <p class="total-price-tag">$3300</p>
+
+
+
+            </div>
+            <div class="col-md-4 color-bg-silver pt-3">
+                <div class="font-weight-bold font-size-18">Summary</div>
+                <hr>
+                <div class="d-flex justify-content-between">
+                    <p class="text-dark">ITEMS</p>
+                    <p class="text-primary">7</p>
+                    <p class="text-danger">$3300</p>
+                </div>
+                <hr>
+
+                <div class="form-group font-size-18">
+                    <label for="shipping">Shipping</label>
+                    <select class="form-control" id="shipping">
+                        <option selected value="1">Standard Delivery-$10</option>
+                        <option value="2">Rapid Delivery-$20</option>
+
+                    </select>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <p class="font-size-18 text-primary">Total Price</p>
+                    <p class="text-danger">$3300</p>
+
+                </div>
+                <div class="row mb-2">
+                    <button type="submit" class="offset-4 btn btn-warning text-center">CHECKOUT</button>
+                </div>
+
+
+
 
             </div>
         </div>
 
-        <a class="checkout-cta">Checkout</a>
-
-
-
-
-
     </div>
 </div>
-<!--wrapper for content-->
