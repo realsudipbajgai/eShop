@@ -121,6 +121,7 @@ class Query extends DBconfig
                 $i++;
             }
             $sql.=" where $where_field ='$where_value'";
+            var_dump($sql);
             if($this->connect()->query($sql)){
                 return 1;
             }

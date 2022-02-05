@@ -1,3 +1,9 @@
+<?php
+    include_once '../../DatabaseController/DBController.php';
+    $obj=new Query();
+    $result = $obj->getData('category','*');
+
+?>
 <div class="container vh-100">
     <div class="d-flex justify-content-between">
         <h2 class="mt-3">List of Categories</h2>
@@ -12,23 +18,26 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Mobile</td>
-            <td>
-                <a href="../categories/update.php"><span class="text-primary"><i class="fas fa-edit"></i></span></a>
-                <a href="#"> <span class="text-danger"><i class="fas fa-trash"></i></span></a>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Laptop</td>
-            <td>
-                <a href="../categories/update.php"><span class="text-primary"><i class="fas fa-edit"></i></span></a>
-                <a href="#"> <span class="text-danger"><i class="fas fa-trash"></i></span></a>
-            </td>
-        </tr>
+        <?php
+            $i=0;
+            while($i<count($result)){
+                $row=$result[$i];
+                ?>
+                <tr>
+                    <th scope="row"><?php echo $i+1;?></th>
+                    <td><?php echo $row['name'];?></td>
+                    <td>
+
+                        <a href="../categories/update.php?id=<?php echo $row['id'];?>"><span class="text-primary"><i class="fas fa-edit"></i></span></a>
+                        <a href="../categories/delete.php?id=<?php echo $row['id'];?>"> <span class="text-danger"><i class="fas fa-trash"></i></span></a>
+                    </td>
+                </tr>
+                <!--close while-->
+            <?php $i++; } ?>
+
+
 
         </tbody>
     </table>
 </div>
+
