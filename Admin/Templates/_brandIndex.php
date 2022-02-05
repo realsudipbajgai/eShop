@@ -1,3 +1,9 @@
+<?php
+include_once '../../DatabaseController/DBController.php';
+$obj=new Query();
+$result = $obj->getData('brand','*');
+
+?>
 <div class="container vh-100">
     <div class="d-flex justify-content-between">
         <h2 class="mt-3">List of Brands</h2>
@@ -12,30 +18,27 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Apple</td>
-            <td>
-                <a href="../brands/update.php"><span class="text-primary"><i class="fas fa-edit"></i></span></a>
-                <a href="#"> <span class="text-danger"><i class="fas fa-trash"></i></span></a>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Samsung</td>
-            <td>
-                <a href="../brands/update.php"><span class="text-primary"><i class="fas fa-edit"></i></span></a>
-                <a href="#"> <span class="text-danger"><i class="fas fa-trash"></i></span></a>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Xiaomi</td>
-            <td>
-                <a href="../brands/update.php"><span class="text-primary"><i class="fas fa-edit"></i></span></a>
-                <a href="#"> <span class="text-danger"><i class="fas fa-trash"></i></span></a>
-            </td>
-        </tr>
+        <?php
+        if($result){
+            $i=0;
+            while($i<count($result)){
+            $row=$result[$i];
+            ?>
+            <tr>
+                <th scope="row"><?php echo $i+1;?></th>
+                <td><?php echo $row['name'];?></td>
+                <td>
+                    <a href="../brands/update.php?id=<?php echo $row['id'];?>"><span class="text-primary"><i class="fas fa-edit"></i></span></a>
+                    <a href="../brands/delete.php?id=<?php echo $row['id'];?>"> <span class="text-danger"><i class="fas fa-trash"></i></span></a>
+                </td>
+            </tr>
+            <!--close while-->
+            <?php $i++; }}
+        else{?>
+        <tr><td colspan="4">No data</td></tr>
+        <?php } //end else
+        ?>
+
         </tbody>
     </table>
 </div>

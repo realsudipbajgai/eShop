@@ -19,6 +19,7 @@
         </thead>
         <tbody>
         <?php
+        if($result){
             $i=0;
             while($i<count($result)){
                 $row=$result[$i];
@@ -27,15 +28,16 @@
                     <th scope="row"><?php echo $i+1;?></th>
                     <td><?php echo $row['name'];?></td>
                     <td>
-
-                        <a href="../categories/update.php?id=<?php echo $row['id'];?>"><span class="text-primary"><i class="fas fa-edit"></i></span></a>
-                        <a href="../categories/delete.php?id=<?php echo $row['id'];?>"> <span class="text-danger"><i class="fas fa-trash"></i></span></a>
+                        <a href="../brands/update.php?id=<?php echo $row['id'];?>"><span class="text-primary"><i class="fas fa-edit"></i></span></a>
+                        <a href="../brands/delete.php?id=<?php echo $row['id'];?>"> <span class="text-danger"><i class="fas fa-trash"></i></span></a>
                     </td>
                 </tr>
                 <!--close while-->
-            <?php $i++; } ?>
-
-
+                <?php $i++; }}
+        else{?>
+            <tr><td colspan="4">No data</td></tr>
+        <?php } //end else
+        ?>
 
         </tbody>
     </table>
