@@ -1,4 +1,10 @@
-<div class="container vh-100">
+<?php
+include_once '../../DatabaseController/DBController.php';
+$obj=new Query();
+$result = $obj->getData('product','*');
+
+?>
+<div class="container min-vh-100">
     <div class="d-flex justify-content-between">
         <h2 class="mt-3">List of Products</h2>
         <a href="../products/create.php" class="mt-4 text-success"><span><i class=" fas fa-add"></i></span> Add new</a>
@@ -8,30 +14,39 @@
         <tr>
             <th scope="col">#</th>
             <th scope="col">Name</th>
+            <th scope="col">Brand</th>
+            <th scope="col">Category</th>
             <th scope="col">Image</th>
             <th scope="col">Actions</th>
         </tr>
         </thead>
         <tbody>
+        <?php
+        if($result){
+        $i=0;
+        while($i<count($result)){
+        $row=$result[$i];
+        $brand=$obj->getDatabyId('brand','name',$row['brand']);
+        $category=$obj->getDatabyId('category','name',$row['category']);
+        ?>
         <tr>
-            <th scope="row">1</th>
-            <td>Mobile</td>
-            <td><img src="/eShop/assets/iphone/iphone-13-pro-max.jpg" alt=""></td>
+            <th scope="row"><?php echo $i+1;?></th>
+            <td><?php echo $row['name'];?></td>
+            <td><?php echo $brand['name'];?></td>
+            <td><?php echo $category['name'];?></td>
+            <td><img src="<?php echo $row['image'];?>" alt="" class="img-fluid" height="350px" width="280px"></td>
             <td>
                 <a href="../products/update.php"><span class="text-primary"><i class="fas fa-edit"></i></span></a>
                 <a href="#"> <span class="text-danger"><i class="fas fa-trash"></i></span></a>
             </td>
         </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Laptop</td>
-            <td><img src="/eShop/assets/others/redmi-note-10-pro.jpg" alt=""></td>
+            <!--close while-->
+            <?php $i++; }}
+        else{?>
+            <tr><td colspan="4">No data</td></tr>
+        <?php } //end else
+        ?>
 
-            <td>
-                <a href="../products/update.php"><span class="text-primary"><i class="fas fa-edit"></i></span></a>
-                <a href="#"> <span class="text-danger"><i class="fas fa-trash"></i></span></a>
-            </td>
-        </tr>
 
         </tbody>
     </table>
