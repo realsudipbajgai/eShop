@@ -36,8 +36,9 @@ $result = $obj->getData('product','*');
             <td><?php echo $category['name'];?></td>
             <td><img src="<?php echo $row['image'];?>" alt="" class="img-fluid" height="350px" width="280px"></td>
             <td>
-                <a href="../products/update.php"><span class="text-primary"><i class="fas fa-edit"></i></span></a>
-                <a href="#"> <span class="text-danger"><i class="fas fa-trash"></i></span></a>
+                <a href="../products/update.php?id=<?php echo $row['id'];?>"><span class="text-primary"><i class="fas fa-edit"></i></span></a>
+                <a href="../products/view.php?id=<?php echo $row['id'];?>"><span class="text-success"><i class="fas fa-eye"></i></span></a>
+                <a href="../products/delete.php?id=<?php echo $row['id'];?>"> <span class="text-danger"><i class="fas fa-trash"></i></span></a>
             </td>
         </tr>
             <!--close while-->

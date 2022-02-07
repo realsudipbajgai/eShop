@@ -29,6 +29,7 @@ $result = $obj->getData('brand','*');
                 <td><?php echo $row['name'];?></td>
                 <td>
                     <a href="../brands/update.php?id=<?php echo $row['id'];?>"><span class="text-primary"><i class="fas fa-edit"></i></span></a>
+                    <a href="../brands/view.php?id=<?php echo $row['id'];?>"><span class="text-success"><i class="fas fa-eye"></i></span></a>
                     <a href="../brands/delete.php?id=<?php echo $row['id'];?>"> <span class="text-danger"><i class="fas fa-trash"></i></span></a>
                 </td>
             </tr>
