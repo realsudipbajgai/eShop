@@ -22,9 +22,7 @@ $result = $obj->getData('banner','*');
 
                     <!--close while-->
                     <?php $i++; }}
-            else{?>
-                No data
-            <?php } //end else
+           
             ?>
 
 
