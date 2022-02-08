@@ -1,21 +1,34 @@
+<?php
+include_once 'DatabaseController/DBController.php';
+$obj=new Query();
+$result = $obj->getData('banner','*');
 
+?>
 <!-- Swiper Large Banner -->
-
 <section id="large-banner">
     <div class="swiper large-banner-swiper">
         <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <img src="assets/banner-1.jpg" alt="Banner1" class="img-fluid">
-            </div>
-            <div class="swiper-slide">
-                <img src="assets/banner-2.jpg" alt="Banner2" class="img-fluid">
-            </div>
-            <div class="swiper-slide">
-                <img src="assets/banner-3.jpg" alt="Banner2" class="img-fluid">
-            </div>
-            <div class="swiper-slide">
-                <img src="assets/banner-4.jpg" alt="Banner2" class="img-fluid">
-            </div>
+            <?php
+            if($result){
+                $i=0;
+                while($i<count($result)){
+                    $row=$result[$i];
+
+                    ?>
+                    <div class="swiper-slide">
+                        <img src="Uploads/<?php echo $row['image']?>" alt="" class="img-fluid" width="1425px">
+                    </div>
+
+
+                    <!--close while-->
+                    <?php $i++; }}
+            else{?>
+                No data
+            <?php } //end else
+            ?>
+
+
+
         </div>
         <div class="swiper-pagination"></div>
     </div>
