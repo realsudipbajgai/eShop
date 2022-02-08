@@ -6,6 +6,8 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
     $target_file = $target_dir . basename($_FILES["inputImage"]["name"]);
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+    $image_for_resolution=imagecreatefromjpeg($target_file);
+    $image_resolution=imageresolution($image_for_resolution);
 
 // Check if image file is a actual image or fake image
     if(isset($_POST["submit"])) {
@@ -30,6 +32,12 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 //        echo "Sorry, your file is too large.";
 //        $uploadOk = 0;
 //    }
+
+    //check image resolution for banner width 1888 px and height 846 px
+    if($imageResolution[0]<1888&&$imageResolution[1]<846){
+
+       echo "Inavlid image resolution";
+    }
 
 // Allow certain file formats
     if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
