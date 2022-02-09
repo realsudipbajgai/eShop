@@ -7,6 +7,8 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
+
+
 // Check if image file is a actual image or fake image
     if(isset($_POST["submit"])) {
         $check = getimagesize($_FILES["inputImage"]["tmp_name"]);
@@ -40,6 +42,9 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
         $uploadOk = 0;
     }
 
+
+
+
 // Check if $uploadOk is set to 0 by an error
     if ($uploadOk == 0) {
         echo "Sorry, your file was not uploaded.";
@@ -53,6 +58,12 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
         );
         if ($obj->insertData('banner',$conditionArr)){
             if (move_uploaded_file($_FILES["inputImage"]["tmp_name"], $target_file)){
+                //resize resolution
+                $image_name =  $target_file;
+                $image = imagecreatefromjpeg($image_name);
+                $imgResized = imagescale($image , 1888, 848);
+                imagejpeg($imgResized, '../../Uploads/'.$_FILES["inputImage"]["name"]);
+
                 header('location:../banner/index.php');
             }
         }
