@@ -34,7 +34,7 @@ $result = $obj->getData('product','*');
             <td><?php echo $row['name'];?></td>
             <td><?php echo $brand['name'];?></td>
             <td><?php echo $category['name'];?></td>
-            <td><img src="<?php echo $row['image'];?>" alt="" class="img-fluid" height="350px" width="280px"></td>
+            <td><img src="../../Uploads/<?php echo $row['image'];?>" alt="" class="img-fluid img-thumbnail" height="250px" width="200px"> </td>
             <td>
                 <a href="../products/update.php?id=<?php echo $row['id'];?>"><span class="text-primary"><i class="fas fa-edit"></i></span></a>
                 <a href="../products/view.php?id=<?php echo $row['id'];?>"><span class="text-success"><i class="fas fa-eye"></i></span></a>

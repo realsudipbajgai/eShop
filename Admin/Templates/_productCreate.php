@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
           'name'=>$name,
           'brand'=>$brand,
           'category'=>$category,
-            'image'=>$target_file
+            'image'=>$_FILES["inputImage"]["name"]
         );
         if ($obj->insertData('product',$conditionArr)){
             if (move_uploaded_file($_FILES["inputImage"]["tmp_name"], $target_file)){

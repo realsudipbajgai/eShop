@@ -12,18 +12,20 @@
             //for file
             $target_file="";
             $uploadOk="";
+            $db_image_name="";
             $oldProduct=$obj->getDatabyId('product','*',$_POST['id']);
 
-            $oldFile=$oldProduct["image"];
+
             //no changes on file
             if ($_FILES["inputImage"]['size']==0){
-                $oldProduct=$obj->getDatabyId('product','*',$_POST['id']);
-                $target_file=$oldFile;
+                $db_image_name=$oldProduct["image"];
             }
             //if new file is uploaded
             else {
                 $target_dir = "../../Uploads/";
                 $target_file = $target_dir . basename($_FILES["inputImage"]["name"]);
+                $db_image_name=$_FILES["inputImage"]["name"];
+                $oldFile="../../Uploads/".$oldProduct["image"];
                 $uploadOk = 1;
                 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
@@ -71,7 +73,7 @@
                         'name'=>$_POST['name'],
                         'brand'=>$_POST['brand'],
                         'category'=>$_POST['category'],
-                        'image'=>$target_file
+                        'image'=>$db_image_name
                 );
                if($obj->updateData('product',$conditionArr,'id',$_POST['id'])){
                    header('Location:../products/index.php');
@@ -145,7 +147,7 @@
         <div class="form-group row">
             <label for="oldImage" class="col-sm-2 col-form-label">Image</label>
             <div class="col-sm-10">
-              <img src="<?php echo $product['image'];?>" height="350px">
+              <img src="../../Uploads/<?php echo $product['image'];?>" height="350px">
             </div>
         </div>
         <div class="form-group row">
