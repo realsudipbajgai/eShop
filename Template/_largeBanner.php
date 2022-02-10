@@ -16,7 +16,7 @@ $result = $obj->getData('banner','*');
 
                     ?>
                     <div class="swiper-slide">
-                        <img src="Uploads/<?php echo $row['image']?>" alt="" class="img-fluid" width="1425px">
+                        <img src="Uploads/<?php echo $row['image']?>" alt="" class="img-fluid">
                     </div>
 
 
