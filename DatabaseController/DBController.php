@@ -128,4 +128,41 @@ class Query extends DBconfig
 
         }
     }
+
+    //dynamic get data
+    //select * from product inner join product_details on product.id=product_details.product_id
+    public function getInnerData($first_table,$second_table,$field = '', $primary_key,$foreign_key,$conditionArr,$like = '', $order_by_field = '', $order_by_type = '', $limit = '')
+    {
+        $sql = "select $field from $first_table inner join $second_table on $first_table.$primary_key=$second_table.$foreign_key";
+        if ($conditionArr != '') {
+            $sql .= " where ";
+            $count = count($conditionArr);
+            $i = 1;
+            foreach ($conditionArr as $key => $val) {
+                if ($i == $count) {
+                    $sql .= "$key='$val' ";
+                } else {
+                    $sql .= "$key='$val' and ";
+                }
+                $i++;
+            }
+
+        }
+        if ($order_by_field != '') {
+            $sql .= " order by $order_by_field $order_by_type ";
+        }
+        if ($limit != '') {
+            $sql .= " limit $limit ";
+        }
+
+        $result = $this->connect()->query($sql);
+        if ($result->num_rows > 0) {
+            $arr = array();
+            while ($row = $result->fetch_assoc()) {
+                $arr[] = $row;
+            }
+            return $arr;
+        } else return 0;
+    }
+
 }
