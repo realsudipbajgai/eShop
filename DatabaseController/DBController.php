@@ -167,16 +167,17 @@ class Query extends DBconfig
 
     //dynamic get data
     //select * from product inner join product_details on product.id=product_details.product_id
-    public function getInnerDatabyId($first_table,$second_table, $primary_key,$foreign_key,$id)
+    public function getInnerDatabyId($first_table,$second_table, $primary_key_field,$foreign_key_field,$id)
     {
-        $sql = "select * from $first_table left join $second_table on $first_table.$primary_key=$second_table.$foreign_key where $first_table.id=$id";
+        $sql = "select * from $first_table inner join $second_table on $first_table.$primary_key_field=$second_table.$foreign_key_field where $first_table.id=$id";
 
 
         $result=$this->connect()->query($sql);
         if($result->num_rows>0){
             $row= $result->fetch_assoc();
+            return $row;
         }
-        return $row;
+
     }
 
 
@@ -186,7 +187,10 @@ class Query extends DBconfig
         $result=$this->connect()->query($sql);
         if($result->num_rows>0){
             $row= $result->fetch_assoc();
+            return $row;
         }
-        return $row;
+
+
+
     }
 }

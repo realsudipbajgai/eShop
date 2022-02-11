@@ -2,10 +2,13 @@
 <?php
     $obj=new Query();
     if($_SERVER["REQUEST_METHOD"]=="GET"){
-        $id=$_GET["id"];
+        $id=trim($_GET["id"]);
         $product=$obj->getDatabyId('product','*',$id);
         $brands=$obj->getData('brand','*');
         $categories=$obj->getData('category','*');
+        if(!empty($obj->getDatabyUniqueId('product_details','*','product_id',$id))){
+            header('location:viewProductDetails.php?id='.$id); //product table id is passed
+        }
     }
     else{
         if ($_SERVER["REQUEST_METHOD"]=="POST") {

@@ -2,10 +2,16 @@
 <?php
 $obj = new Query();
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
-    $id = $_GET["id"];
-    $product = $obj->getDatabyId('product', '*', $id);
-    $brands = $obj->getData('brand', '*');
-    $categories = $obj->getData('category', '*');
+    $id = $_GET["id"]; //product table id
+    $product = $obj->getInnerDatabyId('product', 'product_details', 'id','product_id',$id);
+    if(empty($product)){
+        header('location:addProductDetails.php?id='.$id); //product table id is passed
+    }
+    else{
+        $brands = $obj->getData('brand', '*');
+        $categories = $obj->getData('category', '*');
+    }
+
 } else {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $oldPrice = $newPrice = $description = $err_msg = "";
@@ -22,12 +28,12 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
             $description = trim($_POST['description']);
         }
         $conditionArr = array(
-            'product_id' => trim($_POST["id"]),
+            'product_id' => trim($_POST["product_id"]),
             'old_price' => $oldPrice,
             'new_price' => $newPrice,
             'description' => $description
         );
-        if ($obj->insertData('product_details', $conditionArr)) {
+        if ($obj->updateData('product_details', $conditionArr,'id',$_POST["id"])) {
             header('location:index.php');
         } else {
             $err_msg = "Something wrong with the insertion";
@@ -116,13 +122,13 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
             <label for="inputOldPrice" class="col-sm-2 col-form-label">Old Price</label>
             <div class="col-sm-10">
                 <input type="text" name="oldPrice" class="form-control" id="inputOldPrice"
-                       placeholder="Enter Old Price">
+                       placeholder="Enter Old Price" value="<?php echo $product['old_price']?>">
             </div>
         </div>
         <div class="form-group row">
             <label for="inputNewPrice" class="col-sm-2 col-form-label">New Price</label>
             <div class="col-sm-10">
-                <input type="text" name="newPrice" class="form-control" id="inputNewPrice" placeholder="Enter New Price"
+                <input type="text" name="newPrice" class="form-control" id="inputNewPrice" placeholder="Enter New Price" value="<?php echo $product['new_price']?>"
                        required>
             </div>
         </div>
@@ -130,14 +136,14 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
             <label for="inputDescription" class="col-sm-2 col-form-label">Description</label>
             <div class="col-sm-10">
                 <textarea name="description" class="form-control" id="inputDescription" placeholder="Enter Description"
-                          required></textarea>
+                          required> <?php echo $product['description'];?></textarea>
             </div>
         </div>
 
         <div class="form-group row">
             <div class="col-sm-10">
-                <input type="hidden" value="<?php echo $product['id']; ?>" name="product_id">
-                <input type="hidden" value="<?php echo $product_details['id']; ?>" name="id">
+                <input type="hidden" value="<?php echo $product['product_id']; ?>" name="product_id">
+                <input type="hidden" value="<?php echo $product['id']; ?>" name="id">
                 <button type="submit" class="btn btn-success">Update Details</button>
             </div>
         </div>
