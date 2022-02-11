@@ -50,7 +50,8 @@ $result = $obj->getData('product','*');
             <td><?php echo $category['name'];?></td>
             <td><img src="../../Uploads/Resized/<?php echo $row['image'];?>" alt="" class="img-fluid img-thumbnail"> </td>
             <td>
-                <a href="../products/update.php?id=<?php echo $row['id'];?>"><span class="text-primary"><i class="fas fa-edit"></i></span></a>
+                <a href="../products/addProductDetails.php?id=<?php echo $row['id'];?>"><span class="text-primary"><i class="fas fa-add"></i></span></a>
+                <a href="../products/update.php?id=<?php echo $row['id'];?>"><span class="text-secondary"><i class="fas fa-edit"></i></span></a>
                 <a href="../products/view.php?id=<?php echo $row['id'];?>"><span class="text-success"><i class="fas fa-eye"></i></span></a>
                 <a href="../products/delete.php?id=<?php echo $row['id'];?>"> <span class="text-danger"><i class="fas fa-trash"></i></span></a>
             </td>

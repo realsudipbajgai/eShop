@@ -1,3 +1,3 @@
 <?php
-echo "Error";
+echo $_GET["err_msg"];
 ?>
