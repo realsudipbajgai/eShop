@@ -49,11 +49,22 @@ $result = $obj->getData('product','*');
             <td><?php echo $brand['name'];?></td>
             <td><?php echo $category['name'];?></td>
             <td><img src="../../Uploads/Resized/<?php echo $row['image'];?>" alt="" class="img-fluid img-thumbnail"> </td>
-            <td>
-                <a href="../products/addProductDetails.php?id=<?php echo $row['id'];?>"><span class="text-primary"><i class="fas fa-add"></i></span></a>
-                <a href="../products/update.php?id=<?php echo $row['id'];?>"><span class="text-secondary"><i class="fas fa-edit"></i></span></a>
-                <a href="../products/view.php?id=<?php echo $row['id'];?>"><span class="text-success"><i class="fas fa-eye"></i></span></a>
-                <a href="../products/delete.php?id=<?php echo $row['id'];?>"> <span class="text-danger"><i class="fas fa-trash"></i></span></a>
+            <td class="align-middle">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                       Actions
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a  class="dropdown-item" href="../products/addProductDetails.php?id=<?php echo $row['id'];?>"><span class="text-primary"><i class="fas fa-add"></i>Add Details</span></a>
+                        <a  class="dropdown-item" href="../products/editProductDetails.php?id=<?php echo $row['id'];?>"><span class="text-info"><i class="fas fa-edit"></i>Edit Details</span></a>
+                        <a  class="dropdown-item" href="../products/viewProductDetails.php?id=<?php echo $row['id'];?>"><span class="text-warning"><i class="fas fa-eye"></i>View Details</span></a>
+                        <a class="dropdown-item"  href="../products/update.php?id=<?php echo $row['id'];?>"><span class="text-secondary"><i class="fas fa-edit"></i>Edit Product</span></a>
+                        <a class="dropdown-item"  href="../products/view.php?id=<?php echo $row['id'];?>"><span class="text-success"><i class="fas fa-eye"></i>View Product</span></a>
+                        <a  class="dropdown-item" href="../products/delete.php?id=<?php echo $row['id'];?>"> <span class="text-danger"><i class="fas fa-trash"></i>Delete Product</span></a>
+                    </div>
+                </div
+
+
             </td>
         </tr>
             <!--close while-->

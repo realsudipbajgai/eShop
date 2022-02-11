@@ -31,7 +31,7 @@ $result = $obj->getData('product','*');
                         ?>
                         <div class="swiper-slide  text-center">
 
-                            <img src="Uploads/Resized/<?php echo $row['image']?>" alt=""  >
+                            <a href="product.php?id=<?php echo $row['id'];?>"> <img src="Uploads/Resized/<?php echo $row['image']?>" alt=""  ></a>
 
                             
                         </div>

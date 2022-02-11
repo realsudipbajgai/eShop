@@ -31,7 +31,7 @@ $result = $obj->getData('product','*','','','rand()','','6');
                         $image->save('Uploads/Resized/'.$row['image']);
                         ?>
                         <div class="swiper-slide  text-center">
-                            <a href="product.php" class="text-secondary">
+                            <a href="product.php?id=<?php echo $row['id'];?>" class="text-secondary">
                                 <img src="Uploads/Resized/<?php echo $row['image']?>" alt="" class="img-fluid" >
                                 <p> <?php echo $row["name"];?></p>
                             </a>

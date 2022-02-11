@@ -133,7 +133,7 @@ class Query extends DBconfig
     //select * from product inner join product_details on product.id=product_details.product_id
     public function getInnerData($first_table,$second_table,$field = '', $primary_key,$foreign_key,$conditionArr,$like = '', $order_by_field = '', $order_by_type = '', $limit = '')
     {
-        $sql = "select $field from $first_table inner join $second_table on $first_table.$primary_key=$second_table.$foreign_key";
+        $sql = "select $field from $first_table left join $second_table on $first_table.$primary_key=$second_table.$foreign_key";
         if ($conditionArr != '') {
             $sql .= " where ";
             $count = count($conditionArr);
@@ -164,6 +164,21 @@ class Query extends DBconfig
             return $arr;
         } else return 0;
     }
+
+    //dynamic get data
+    //select * from product inner join product_details on product.id=product_details.product_id
+    public function getInnerDatabyId($first_table,$second_table, $primary_key,$foreign_key,$id)
+    {
+        $sql = "select * from $first_table left join $second_table on $first_table.$primary_key=$second_table.$foreign_key where $first_table.id=$id";
+
+
+        $result=$this->connect()->query($sql);
+        if($result->num_rows>0){
+            $row= $result->fetch_assoc();
+        }
+        return $row;
+    }
+
 
     //get data by unique key
     public function getDatabyUniqueId($table,$field='',$Unique_id_field,$Unique_id){

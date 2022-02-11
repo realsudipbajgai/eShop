@@ -49,7 +49,7 @@
         <div class="form-group row">
             <label for="inputProductName" class="col-sm-2 col-form-label">Name</label>
             <div class="col-sm-10">
-                <input type="text" name="name" class="form-control" id="inputProductName" placeholder="Enter product name" value="<?php echo $product['name'];?>" disabled>
+                <input type="text" name="name" class="form-control" id="inputProductName" placeholder="Enter product name" value="<?php echo $product['name'];?>">
             </div>
         </div>
         <div class="form-group row">
