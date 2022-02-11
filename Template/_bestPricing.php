@@ -18,9 +18,21 @@ $result = $obj->getData('product','*');
                     $i=0;
                     while($i<count($result)){
                         $row=$result[$i];
+                        //for resizing
+                        $target_dir = "Uploads/";
+                        $target_file = $target_dir .$row['image'];
+
+                        $image = new ResizeImage();
+                        $image->load($target_file);
+
+
+                        $image->resize(300,280);
+                        $image->save('Uploads/Resized/'.$row['image']);
                         ?>
                         <div class="swiper-slide  text-center">
-                            <img src="Uploads/<?php echo $row['image']?>" alt=""  >
+
+                            <img src="Uploads/Resized/<?php echo $row['image']?>" alt=""  >
+
                             
                         </div>
 
