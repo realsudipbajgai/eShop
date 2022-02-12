@@ -20,12 +20,15 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         $_SESSION["loggedin"] = true;
         $_SESSION["id"] = $user['id'];
         $_SESSION["email"] = $email;
+        $_SESSION["username"] = $user['name'];
+
         header('location:admin.php');
     }
     else if($user['password']==$password){
         $_SESSION["loggedin"] = true;
         $_SESSION["id"] = $user['id'];
-        $_SESSION["username"] = $username;
+        $_SESSION["email"] = $email;;
+        $_SESSION["username"] = $user['name'];
 
         header('location:index.php');
     }

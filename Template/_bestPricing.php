@@ -19,19 +19,19 @@ $result = $obj->getData('product','*');
                     while($i<count($result)){
                         $row=$result[$i];
                         //for resizing
-                        $target_dir = "Uploads/";
-                        $target_file = $target_dir .$row['image'];
-
-                        $image = new ResizeImage();
-                        $image->load($target_file);
-
-
-                        $image->resize(300,280);
-                        $image->save('Uploads/Resized/'.$row['image']);
+//                        $target_dir = "Uploads/";
+//                        $target_file = $target_dir .$row['image'];
+//
+//                        $image = new ResizeImage();
+//                        $image->load($target_file);
+//
+//
+//                        $image->resize(300,280);
+//                        $image->save('Uploads/Resized/'.$row['image']);
                         ?>
                         <div class="swiper-slide  text-center">
 
-                            <a href="product.php?id=<?php echo $row['id'];?>"> <img src="Uploads/Resized/<?php echo $row['image']?>" alt=""  ></a>
+                            <a href="product.php?id=<?php echo $row['id'];?>"> <img src="Uploads/<?php echo $row['image']?>" alt="" width="300" height="280"  ></a>
 
                             
                         </div>

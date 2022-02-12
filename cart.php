@@ -1,7 +1,7 @@
 <?php session_start();?>
 <?php
 //include header file
-include 'header.php'?>
+include 'header.php';?>
 
 
 

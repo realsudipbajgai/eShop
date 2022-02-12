@@ -1,6 +1,6 @@
 <?php
 include_once '../../DatabaseController/DBController.php';
-include_once '../../Global/ResizeImage.php';
+//include_once '../../Global/ResizeImage.php';
 
 $obj=new Query();
 $result = $obj->getData('product','*');
@@ -31,16 +31,16 @@ $result = $obj->getData('product','*');
         $brand=$obj->getDatabyId('brand','name',$row['brand']);
         $category=$obj->getDatabyId('category','name',$row['category']);
 
-        //for resizing
-            $target_dir = "../../Uploads/";
-            $target_file = $target_dir .$row['image'];
-
-            $image = new ResizeImage();
-            $image->load($target_file);
-
-
-            $image->resize(100,120);
-            $image->save('../../Uploads/Resized/'.$row['image']);
+//        //for resizing
+//            $target_dir = "../../Uploads/";
+//            $target_file = $target_dir .$row['image'];
+//
+//            $image = new ResizeImage();
+//            $image->load($target_file);
+//
+//
+//            $image->resize(100,120);
+//            $image->save('../../Uploads/Resized/'.$row['image']);
 
             ?>
         <tr>
@@ -48,7 +48,7 @@ $result = $obj->getData('product','*');
             <td><?php echo $row['name'];?></td>
             <td><?php echo $brand['name'];?></td>
             <td><?php echo $category['name'];?></td>
-            <td><img src="../../Uploads/Resized/<?php echo $row['image'];?>" alt="" class="img-fluid img-thumbnail"> </td>
+            <td><img src="../../Uploads/<?php echo $row['image'];?>" alt="" width="100" height="120" class="img-fluid img-thumbnail"> </td>
             <td class="align-middle">
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

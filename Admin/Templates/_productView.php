@@ -73,7 +73,7 @@
         <div class="form-group row">
             <label for="oldImage" class="col-sm-2 col-form-label">Image</label>
             <div class="col-sm-10">
-              <img src="<?php echo $product['image'];?>" height="350px">
+              <img src="../../Uploads/<?php echo $product['image'];?>" height="350px">
             </div>
         </div>
 
