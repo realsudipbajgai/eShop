@@ -4,7 +4,7 @@ $obj=new Query();
 $result = $obj->getData('brand','*');
 
 ?>
-<div class="container vh-100">
+<div class="container min-vh-100">
     <div class="d-flex justify-content-between">
         <h2 class="mt-3">List of Brands</h2>
         <a href="../brands/create.php" class="mt-4 text-success"><span><i class=" fas fa-add"></i></span> Add new</a>
