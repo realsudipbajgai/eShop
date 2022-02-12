@@ -184,13 +184,34 @@ class Query extends DBconfig
     //get data by unique key
     public function getDatabyUniqueId($table,$field='',$Unique_id_field,$Unique_id){
         $sql="select $field from $table where $Unique_id_field=$Unique_id";
+        var_dump($sql);
         $result=$this->connect()->query($sql);
         if($result->num_rows>0){
             $row= $result->fetch_assoc();
             return $row;
         }
+        else{
+            return 0;
+        }
 
 
 
     }
+
+    //get data by unique key
+    public function getUserbyEmail($email){
+        $sql="select * from user where email='$email'";
+        $result=$this->connect()->query($sql);
+        if($result->num_rows>0){
+            $row= $result->fetch_assoc();
+            return $row;
+        }
+        else{
+            return 0;
+        }
+
+
+
+    }
+
 }

@@ -62,12 +62,19 @@ include 'Global/deleteResizedFiles.php';
 
             </ul>
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Log in</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">sign up</a>
-                </li>
+                <?php
+
+                if(isset($_SESSION["loggedin"])){?>
+                    <li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>
+                <?php }else{?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Log in</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">sign up</a>
+                    </li>
+                <?php } //end else
+                ?>
             </ul>
         </div>
     </nav>
