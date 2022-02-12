@@ -9,7 +9,7 @@ include 'header.php'?>
 
 <?php
 //include cart container
-include 'Template/_cart.php';
+include 'Template/_checkout.php';
 ?>
 
 <?php

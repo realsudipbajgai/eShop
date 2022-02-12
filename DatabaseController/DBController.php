@@ -65,6 +65,18 @@ class Query extends DBconfig
         }
         return $row;
     }
+    //get data by id
+    public function getAllDatabyField($table,$field,$fieldvalue){
+        $sql="select * from $table where $field=$fieldvalue";
+        $result=$this->connect()->query($sql);
+        if ($result->num_rows > 0) {
+            $arr = array();
+            while ($row = $result->fetch_assoc()) {
+                $arr[] = $row;
+            }
+            return $arr;
+        } else return 0;
+    }
     //select $field from $table where $condition like $like order by $order_by_field $order_by_type limit $limit
     public function insertData($table, $conditionArr = '')
     {
@@ -179,8 +191,30 @@ class Query extends DBconfig
         }
 
     }
+    public function getLeftjoinDatabyId($first_table,$second_table, $primary_key_field,$foreign_key_field,$id)
+    {
+        $sql = "select * from $first_table left join $second_table on $first_table.$primary_key_field=$second_table.$foreign_key_field where $first_table.id=$id";
 
 
+        $result=$this->connect()->query($sql);
+        if($result->num_rows>0){
+            $row= $result->fetch_assoc();
+            return $row;
+        }
+
+    }
+    public function getRightjoinDatabyId($first_table,$second_table, $primary_key_field,$foreign_key_field,$id)
+    {
+        $sql = "select * from $first_table right join $second_table on $first_table.$primary_key_field=$second_table.$foreign_key_field where $first_table.id=$id";
+
+
+        $result=$this->connect()->query($sql);
+        if($result->num_rows>0){
+            $row= $result->fetch_assoc();
+            return $row;
+        }
+
+    }
     //get data by unique key
     public function getDatabyUniqueId($table,$field='',$Unique_id_field,$Unique_id){
         $sql="select $field from $table where $Unique_id_field=$Unique_id";

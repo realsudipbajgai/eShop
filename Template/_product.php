@@ -5,6 +5,11 @@ include_once 'Global/ResizeImage.php';
 <?php
 $obj=new Query();
 $result=$obj->getInnerDatabyId('product','product_details','id','product_id',trim($_GET['id']));
+if(empty($result)){
+    $err_msg="this product is not availaible";
+    header('location:error.php?err_msg='.$err_msg);
+    exit();
+}
 $brand=$obj->getDatabyId('brand','*',$result['brand']);
 
 //for resizing
@@ -60,7 +65,7 @@ $image->save('Uploads/Resized/'.$result['image']);
                 <hr>
                 <div class="row">
                     <div class="col-sm-5 btn btn-secondary"><?php echo $result['new_price']; ?></div>
-                    <a class="col-sm-6 ml-sm-3 btn btn-warning" href="./cart.php">Add to Cart</a>
+                    <a class="col-sm-6 ml-sm-3 btn btn-warning" href="_partial_cart.php?product_id=<?php echo $result['product_id'];?>">Add to Cart</a>
                 </div>
                 <div class="row mt-2 col-sm-12 border border-success bg-success rounded-pill justify-content-center text-warning">You Save $25.00</div>
                 <a href="#" class="text-primary"> <span><i class="fas fa-truck"></i></span> Free Shippin on orders $50+</a>
