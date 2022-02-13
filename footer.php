@@ -29,7 +29,7 @@
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
 <!--custom js-->
-<script src="scripts/index.js"></script>
+<script src="/eshop/scripts/index.js"></script>
 
 <!--custom swiper init-->
 <script src="scripts/swiper_init.js"></script>

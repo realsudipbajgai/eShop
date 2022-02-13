@@ -7,19 +7,20 @@ $result = $obj->getData('product','*');
 
 ?>
 <div class="container min-vh-100">
-    <div class="d-flex justify-content-between">
+    <div class="d-flex justify-content-between py-1">
         <h2 class="mt-3">List of Products</h2>
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
         <a href="../products/create.php" class="mt-4 text-success"><span><i class=" fas fa-add"></i></span> Add new</a>
     </div>
-    <table class="table table-striped">
+    <table class="table table-striped" id="productTable">
         <thead>
         <tr>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Brand</th>
-            <th scope="col">Category</th>
-            <th scope="col">Image</th>
-            <th scope="col">Actions</th>
+            <td >#</td>
+            <td >Name</td>
+            <td >Brand</td>
+            <td >Category</td>
+            <td >Image</td>
+            <td >Actions</td>
         </tr>
         </thead>
         <tbody>
