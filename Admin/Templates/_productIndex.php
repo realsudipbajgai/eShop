@@ -3,9 +3,29 @@ include_once '../../DatabaseController/DBController.php';
 //include_once '../../Global/ResizeImage.php';
 
 $obj = new Query();
-$result = $obj->getData('product', '*');
+
+$product = $obj->getData('product', '*');
 $brands = $obj->getData('brand', '*');
 $categories = $obj->getData('category', '*');
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    if(!empty($_SESSION["isFilter"])){
+    if ($_SESSION["isFilter"] == true) {
+        $filteredProduct = "";
+        if (!empty($_GET["product"])) {
+            $filteredProduct = $_GET["product"];
+        }
+        if (!empty($filteredProduct)) {
+            $product = json_decode($filteredProduct, true);
+        } else {
+            $product = $filteredProduct;
+        }
+    }}
+if(!empty($_SESSION["isFilter"])){
+    if ($_SESSION["isReset"] == true){
+        $product = $obj->getData('product', '*');
+    }}
+}
+
 
 ?>
 <div class="container min-vh-100">
@@ -15,30 +35,56 @@ $categories = $obj->getData('category', '*');
                title="Type in a name">
 
         <label>Filter by:</label>
-        <select name="filterBrand" id="filterBrand">
-            <option selected>select...</option>
-            <?php
-            $i = 0;
-            while ($i < count($brands)) {
-                $row = $brands[$i];
+        <form action="filterProduct.php" method="POST">
+            <select name="filterBrand" id="filterBrand">
+                <option selected value="">select...</option>
+                <?php
+                $i = 0;
+                while ($i < count($brands)) {
+                    $row = $brands[$i];
+                    ?>
+                    <option value="<?php echo $row['id']; ?>"
+                        <?php
+                        if ($_SERVER["REQUEST_METHOD"]=="GET"){
+                        if (!empty($_SESSION["isFilter"] )&&$_SESSION["isFilter"] === true) {
+                            if ($row['id'] === $_SESSION["selectedBrand"]) {
+                                echo "selected";
+                            }
+                        }}
+                        ?>
+                    >
+                        <?php echo $row['name']; ?></option>
+                    <?php $i++;
+                } //close while
                 ?>
-                <option value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
-                <?php $i++;
-            } //close while
-            ?>
-        </select>
-        <select name="filterCategory" id="filterCategory">
-            <option selected>select...</option>
-            <?php
-            $i = 0;
-            while ($i < count($categories)) {
-                $row = $categories[$i];
+            </select>
+            <select name="filterCategory" id="filterCategory">
+                <option selected value="">select...</option>
+                <?php
+                $i = 0;
+                while ($i < count($categories)) {
+                    $row = $categories[$i];
+                    ?>
+                    <option value="<?php echo $row['id']; ?>"
+                        <?php
+                        if ($_SERVER["REQUEST_METHOD"]=="GET"){
+                            if (!empty($_SESSION["isFilter"] )&&$_SESSION["isFilter"] === true) {
+                                if ($row['id'] === $_SESSION["selectedCategory"]) {
+                                    echo "selected";
+                                }
+                            }}
+                        ?>
+                    ><?php echo $row['name']; ?></option>
+                    <?php $i++;
+                } //close while
                 ?>
-                <option value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
-                <?php $i++;
-            } //close while
-            ?>
-        </select>
+            </select>
+
+            <button type="submit" class="btn btn-outline-primary"><i class="text-outline-primary fas fa-search"></i>
+                Search
+            </button>
+        </form>
+        <a href="resetFilter.php" class="btn btn-danger">Reset</a>
 
         <a href="../products/create.php" class="text-success"><span><i class=" fas fa-add"></i></span> Add new</a>
     </div>
@@ -55,10 +101,11 @@ $categories = $obj->getData('category', '*');
         </thead>
         <tbody>
         <?php
-        if ($result) {
+
+        if (!empty($product)) {
             $i = 0;
-            while ($i < count($result)) {
-                $row = $result[$i];
+            while ($i < count($product)) {
+                $row = $product[$i];
                 $brand = $obj->getDatabyId('brand', 'name', $row['brand']);
                 $category = $obj->getDatabyId('category', 'name', $row['category']);
 

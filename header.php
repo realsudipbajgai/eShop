@@ -78,7 +78,7 @@ include 'Global/deleteResizedFiles.php';
                             <a class="dropdown-item" href="cart.php">Your Cart</a>
 
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="logout.php">Logout</a>
+                            <a class="dropdown-item" href="/eshop/logout.php">Logout</a>
                         </div>
                     </li>
                 <?php } else {
